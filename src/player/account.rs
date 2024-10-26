@@ -7,7 +7,9 @@ use crate::region::routing::RoutingRegion;
 #[derive(Serialize, Deserialize, Debug)]
 pub struct RiotAccount {
     puuid: String,
+    #[serde(rename = "gameName")]
     game_name: Option<String>,
+    #[serde(rename = "tagLine")]
     tag_line: Option<String>,
 }
 
