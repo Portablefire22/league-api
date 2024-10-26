@@ -17,9 +17,9 @@ impl RiotAccount {
     /// Returns None on error or if the account does not exist.
     pub async fn by_riot_id(
         region: RoutingRegion,
-        api_key: String,
-        game_name: String,
-        tag_line: String,
+        api_key: &String,
+        game_name: &String,
+        tag_line: &String,
     ) -> Option<Self> {
         let request_url = format!(
             "https://{}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{}/{}?api_key={}",
@@ -39,7 +39,7 @@ impl RiotAccount {
         }
     }
 
-    pub async fn by_puuid(region: RoutingRegion, api_key: String, puuid: String) -> Option<Self> {
+    pub async fn by_puuid(region: RoutingRegion, api_key: &String, puuid: &String) -> Option<Self> {
         let request_url = format!(
             "https://{}.api.riotgames.com/riot/account/v1/accounts/by-puuid/{}?api_key={}",
             region.to_string(),
