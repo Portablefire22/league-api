@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 use crate::region::routing::RoutingRegion;
 
 #[derive(Serialize, Deserialize)]
-struct RiotAccount {
+pub struct RiotAccount {
     puuid: String,
     game_name: Option<String>,
     tag_line: Option<String>,
