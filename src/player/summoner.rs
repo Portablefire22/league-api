@@ -100,4 +100,23 @@ impl Summoner {
             }
         }
     }
+
+    pub fn get_account_id(&self) -> &String {
+        &self.account_id
+    }
+    pub fn get_profile_icon_id(&self) -> u32 {
+        self.profile_icon_id
+    }
+    pub fn get_revision_date(&self) -> u64 {
+        self.revision_date
+    }
+    pub fn get_id(&self) -> &String {
+        &self.id
+    }
+    pub fn get_puuid(&self) -> &String {
+        &self.puuid
+    }
+    pub fn get_summoner_level(&self) -> u64 {
+        self.summoner_level
+    }
 }

@@ -57,6 +57,18 @@ impl RiotAccount {
         }
     }
 
+    pub fn get_puuid(&self) -> &String {
+        &self.puuid
+    }
+
+    pub fn get_game_name(&self) -> &Option<String> {
+        &self.game_name
+    }
+
+    pub fn get_tag_line(&self) -> &Option<String> {
+        &self.tag_line
+    }
+
     pub fn new(puuid: String, game_name: Option<String>, tag_line: Option<String>) -> Self {
         Self {
             puuid,
