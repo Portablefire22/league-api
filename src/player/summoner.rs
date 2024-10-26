@@ -32,7 +32,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", serde_json::to_string_pretty(&resp).unwrap());
+                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
                 Some(t)
             }
             Err(e) => {
@@ -57,7 +57,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", serde_json::to_string_pretty(&resp).unwrap());
+                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
                 Some(t)
             }
             Err(e) => {
@@ -78,7 +78,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", serde_json::to_string_pretty(&resp).unwrap());
+                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
                 Some(t)
             }
             Err(e) => {
@@ -103,7 +103,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", serde_json::to_string_pretty(&resp).unwrap());
+                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
                 Some(t)
             }
             Err(e) => {
