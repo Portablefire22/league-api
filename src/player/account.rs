@@ -1,4 +1,4 @@
-use log::error;
+use log::{debug, error};
 use reqwest::header::WARNING;
 use serde::{Deserialize, Serialize};
 
@@ -31,7 +31,10 @@ impl RiotAccount {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => Some(t),
+            Ok(t) => {
+                debug!("{:?}", &resp);
+                Some(t)
+            }
             Err(e) => {
                 error!("{e:?}");
                 None
@@ -49,7 +52,10 @@ impl RiotAccount {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => Some(t),
+            Ok(t) => {
+                debug!("{:?}", &resp);
+                Some(t)
+            }
             Err(e) => {
                 error!("{e:?}");
                 None

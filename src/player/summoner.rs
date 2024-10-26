@@ -1,5 +1,5 @@
 use crate::region::server::ServerRegion;
-use log::error;
+use log::{debug, error};
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
@@ -31,7 +31,10 @@ impl Summoner {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => Some(t),
+            Ok(t) => {
+                debug!("{:?}", &resp);
+                Some(t)
+            }
             Err(e) => {
                 error!("{e:?}");
                 None
@@ -53,7 +56,10 @@ impl Summoner {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => Some(t),
+            Ok(t) => {
+                debug!("{:?}", &resp);
+                Some(t)
+            }
             Err(e) => {
                 error!("{e:?}");
                 None
@@ -71,7 +77,10 @@ impl Summoner {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => Some(t),
+            Ok(t) => {
+                debug!("{:?}", &resp);
+                Some(t)
+            }
             Err(e) => {
                 error!("{e:?}");
                 None
@@ -93,7 +102,10 @@ impl Summoner {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => Some(t),
+            Ok(t) => {
+                debug!("{:?}", &resp);
+                Some(t)
+            }
             Err(e) => {
                 error!("{e:?}");
                 None
