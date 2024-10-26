@@ -24,8 +24,8 @@ impl RiotAccount {
         let request_url = format!(
             "https://{}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{}/{}?api_key={}",
             region.to_string(),
-            tag_line,
             game_name,
+            tag_line,
             api_key
         );
         let resp = reqwest::get(request_url).await.unwrap();
