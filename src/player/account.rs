@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::region::routing::RoutingRegion;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct RiotAccount {
     puuid: String,
     game_name: Option<String>,
@@ -32,7 +32,7 @@ impl RiotAccount {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", &resp);
+                debug!("{:?}", serde_json::to_string_pretty(&resp));
                 Some(t)
             }
             Err(e) => {
@@ -53,7 +53,7 @@ impl RiotAccount {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", &resp);
+                debug!("{:?}", serde_json::to_string_pretty(&resp));
                 Some(t)
             }
             Err(e) => {

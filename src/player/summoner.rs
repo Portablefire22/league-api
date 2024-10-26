@@ -2,7 +2,7 @@ use crate::region::server::ServerRegion;
 use log::{debug, error};
 use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct Summoner {
     #[serde(rename = "accountId")]
     account_id: String,
@@ -32,7 +32,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", &resp);
+                debug!("{:?}", serde_json::to_string_pretty(&resp));
                 Some(t)
             }
             Err(e) => {
@@ -57,7 +57,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", &resp);
+                debug!("{:?}", serde_json::to_string_pretty(&resp));
                 Some(t)
             }
             Err(e) => {
@@ -78,7 +78,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", &resp);
+                debug!("{:?}", serde_json::to_string_pretty(&resp));
                 Some(t)
             }
             Err(e) => {
@@ -103,7 +103,7 @@ impl Summoner {
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
             Ok(t) => {
-                debug!("{:?}", &resp);
+                debug!("{:?}", serde_json::to_string_pretty(&resp));
                 Some(t)
             }
             Err(e) => {
