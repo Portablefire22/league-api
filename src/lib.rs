@@ -1,9 +1,6 @@
-use simple_logger::SimpleLogger;
-
-pub mod player;
+pub mod account;
+pub mod league;
+pub mod queue;
+pub mod ranked;
 pub mod region;
-
-/** Initialises logging for the library */
-pub fn init() {
-    SimpleLogger::new().init().unwrap();
-}
+pub mod summoner;
