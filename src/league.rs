@@ -27,7 +27,7 @@ pub struct LeagueEntry {
     fresh_blood: bool,
     inactive: bool,
     #[serde(rename = "miniSeries")]
-    mini_series: MiniSeries,
+    mini_series: Option<MiniSeries>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -53,7 +53,7 @@ pub struct LeagueItem {
     fresh_blood: bool,
     wins: u32,
     #[serde(rename = "miniSeries")]
-    mini_series: MiniSeries,
+    mini_series: Option<MiniSeries>,
     inactive: bool,
     veteran: bool,
     #[serde(rename = "hotStreak")]
