@@ -13,9 +13,9 @@ pub struct LeagueEntry {
     #[serde(rename = "summonerId")]
     summoner_id: String,
     #[serde(rename = "queueType")]
-    queue_type: String,
-    tier: String,
-    rank: String,
+    queue_type: RankedQueue,
+    tier: RankedTier,
+    rank: RankedDivision,
     #[serde(rename = "leaguePoints")]
     league_points: u32,
     wins: u32,
@@ -43,9 +43,9 @@ pub struct LeagueList {
     #[serde(rename = "leagueId")]
     league_id: String,
     entries: Vec<LeagueItem>,
-    tier: String,
+    tier: RankedTier,
     name: String,
-    queue: String,
+    queue: RankedQueue,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
