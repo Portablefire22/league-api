@@ -1,3 +1,5 @@
+use log::error;
+
 pub enum ServerRegion {
     BR1,
     EUN1,
@@ -38,6 +40,34 @@ impl ToString for ServerRegion {
             Self::TR1 => String::from("tr1"),
             Self::TW2 => String::from("tw2"),
             Self::VN2 => String::from("vn2"),
+        }
+    }
+}
+
+impl From<String> for ServerRegion {
+    fn from(value: String) -> Self {
+        match value.to_lowercase().as_str() {
+            "br" => Self::BR1,
+            "eun1" => Self::EUN1,
+            "euw1" => Self::EUW1,
+            "jp1" => Self::JP1,
+            "kr" => Self::KR,
+            "la1" => Self::LA1,
+            "la2" => Self::LA2,
+            "me1" => Self::ME1,
+            "na1" => Self::NA1,
+            "oc1" => Self::OC1,
+            "ph2" => Self::PH2,
+            "ru" => Self::RU,
+            "sg2" => Self::SG2,
+            "th2" => Self::TH2,
+            "tr1" => Self::TR1,
+            "tw2" => Self::TW2,
+            "vn2" => Self::VN2,
+            _ => {
+                error!("Invalid region '{}' defaulting to EUW1", value);
+                Self::EUW1
+            }
         }
     }
 }
