@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub enum RankedQueue {
-    #[serde(rename = "RANKED_SOLO_5X5")]
+    #[serde(rename = "RANKED_SOLO_5x5")]
     RankedSolo5x5,
     #[serde(rename = "RANKED_FLEX_SR")]
     RankedFlexSR,
