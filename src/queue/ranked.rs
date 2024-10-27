@@ -1,3 +1,4 @@
+use log::error;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -19,10 +20,14 @@ impl ToString for RankedQueue {
 
 impl From<&'static str> for RankedQueue {
     fn from(value: &'static str) -> Self {
-        match &self {
+        match value {
             "RANKED_SOLO_5X5" => RankedQueue::RankedSolo5x5,
             "RANKED_FLEX_SR" => RankedQueue::RankedFlexSR,
             "RANKED_FLEX_TT" => RankedQueue::RankedFlexTT,
+            _ => {
+                error!("Unknown queue '{}', defaulting to RankedSolo5x5!", value);
+                RankedQueue::RankedSolo5x5
+            }
         }
     }
 }

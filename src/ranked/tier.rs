@@ -1,4 +1,5 @@
 use core::fmt;
+use std::fmt::write;
 
 use log::error;
 use serde::{Deserialize, Serialize};
@@ -20,16 +21,16 @@ pub enum RankedTier {
 impl fmt::Display for RankedTier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self {
-            Self::IRON => write!("IRON"),
-            Self::BRONZE => write!("BRONZE"),
-            Self::SILVER => write!("SILVER"),
-            Self::GOLD => write!("GOLD"),
-            Self::PLATINUM => write!("PLATINUM"),
-            Self::EMERALD => write!("EMERALD"),
-            Self::DIAMOND => write!("DIAMOND"),
-            Self::MASTER => write!("MASTER"),
-            Self::GRANDMASTER => write!("GRANDMASTER"),
-            Self::CHALLENGER => write!("CHALLENGER"),
+            Self::IRON => write!(f, "IRON"),
+            Self::BRONZE => write!(f, "BRONZE"),
+            Self::SILVER => write!(f, "SILVER"),
+            Self::GOLD => write!(f, "GOLD"),
+            Self::PLATINUM => write!(f, "PLATINUM"),
+            Self::EMERALD => write!(f, "EMERALD"),
+            Self::DIAMOND => write!(f, "DIAMOND"),
+            Self::MASTER => write!(f, "MASTER"),
+            Self::GRANDMASTER => write!(f, "GRANDMASTER"),
+            Self::CHALLENGER => write!(f, "CHALLENGER"),
         }
     }
 }
