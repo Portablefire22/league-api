@@ -18,7 +18,7 @@ pub struct Summoner {
 
 impl Summoner {
     pub async fn by_rso_puuid(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         rso_puuid: &String,
     ) -> Option<Self> {
@@ -43,7 +43,7 @@ impl Summoner {
     }
 
     pub async fn by_account(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         encrypted_account_id: &String,
     ) -> Option<Self> {
@@ -89,7 +89,7 @@ impl Summoner {
     }
 
     pub async fn by_summoner_id(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         summoner_id: &String,
     ) -> Option<Self> {

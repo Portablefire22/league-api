@@ -68,7 +68,7 @@ pub struct LeagueItem {
 
 impl LeagueList {
     pub async fn challenger_by_queue(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         queue: RankedQueue,
     ) -> Option<Self> {
@@ -93,7 +93,7 @@ impl LeagueList {
     }
 
     pub async fn grandmaster_by_queue(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         queue: RankedQueue,
     ) -> Option<Self> {
@@ -118,7 +118,7 @@ impl LeagueList {
     }
 
     pub async fn master_by_queue(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         queue: RankedQueue,
     ) -> Option<Self> {
@@ -143,7 +143,7 @@ impl LeagueList {
     }
 
     pub async fn leagues(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         league_id: &String,
     ) -> Option<Self> {
@@ -170,7 +170,7 @@ impl LeagueList {
 
 impl LeagueEntry {
     pub async fn by_summoner(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         summoner_id: &String,
     ) -> Option<Vec<Self>> {
@@ -195,7 +195,7 @@ impl LeagueEntry {
     }
 
     pub async fn entries(
-        region: ServerRegion,
+        region: &ServerRegion,
         api_key: &String,
         division: RankedDivision,
         tier: RankedTier,
