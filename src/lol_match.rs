@@ -67,7 +67,7 @@ pub struct Participant {
     detector_wards_placed: u32,
     double_kills: u32,
     dragon_kills: u32,
-    eligible_for_progession: bool,
+    eligible_for_progression: bool,
     enemy_missing_pings: u32,
     enemy_vision_pings: u32,
     first_blood_assist: bool,
