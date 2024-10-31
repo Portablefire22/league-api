@@ -1,6 +1,6 @@
 [package]
 name = "league-api"
-version = "0.3.12"
+version = "0.3.13"
 edition = "2021"
 authors = ["Portablefire22 <lilith@kitten.rs>"]
 description = "A library for interfacing with the Riot development API."
