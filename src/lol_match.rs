@@ -195,6 +195,7 @@ pub struct Participant {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Challenges {
+    #[serde(rename = "12AssistStreakCount")]
     twelve_assist_streak_count: u32,
     baron_buff_gold_advantage_over_threshold: u32,
     control_ward_time_coverage_in_river_or_enemy_half: f32,
