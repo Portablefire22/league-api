@@ -358,6 +358,7 @@ pub struct Challenges {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct Missions {
     player_score_0: u32,
     player_score_1: u32,
@@ -381,6 +382,7 @@ pub struct Perks {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct PerkStats {
     defense: u32,
     flex: u32,
@@ -388,6 +390,7 @@ pub struct PerkStats {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct PerkStyle {
     description: String,
     selections: Vec<PerkStyleSelection>,
@@ -395,6 +398,7 @@ pub struct PerkStyle {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct PerkStyleSelection {
     perk: u32,
     var1: u32,
@@ -431,6 +435,7 @@ pub struct Objectives {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct Objective {
     first: bool,
     kills: u32,
