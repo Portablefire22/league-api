@@ -1,5 +1,7 @@
 use log::error;
+use serde::{Deserialize, Serialize};
 
+#[derive(Serialize, Deserialize)]
 pub enum ServerRegion {
     BR1,
     EUN1,

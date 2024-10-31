@@ -1,5 +1,8 @@
+use serde::{Deserialize, Serialize};
+
 use super::server::ServerRegion;
 
+#[derive(Serialize, Deserialize)]
 pub enum RoutingRegion {
     EUROPE,
     AMERICAS,
