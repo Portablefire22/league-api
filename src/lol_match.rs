@@ -423,7 +423,7 @@ pub struct Objective {
 
 impl Match {
     pub async fn by_match_id(
-        region: RoutingRegion,
+        region: &RoutingRegion,
         api_key: &String,
         match_id: &String,
     ) -> Option<Self> {
@@ -448,9 +448,9 @@ impl Match {
     }
 
     pub async fn by_puuid(
-        region: RoutingRegion,
+        region: &RoutingRegion,
         api_key: &String,
-        puuid: String,
+        puuid: &String,
         start_time: Option<u64>,
         end_time: Option<u64>,
         queue: Option<u32>,
@@ -642,7 +642,7 @@ pub struct Position {
 
 impl Timeline {
     pub async fn by_match_id(
-        region: RoutingRegion,
+        region: &RoutingRegion,
         api_key: &String,
         match_id: &String,
     ) -> Option<Timeline> {
