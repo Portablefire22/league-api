@@ -9,6 +9,7 @@ pub struct Match {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct Metadata {
     data_version: String,
     match_id: String,
