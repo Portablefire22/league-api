@@ -441,7 +441,7 @@ impl Match {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {:?}", resp);
                 None
             }
         }
@@ -492,7 +492,7 @@ impl Match {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {:?}", resp);
                 None
             }
         }
@@ -660,7 +660,7 @@ impl Timeline {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {:?}", resp);
                 None
             }
         }

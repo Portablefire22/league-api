@@ -61,7 +61,7 @@ impl Summoner {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -82,7 +82,7 @@ impl Summoner {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -107,7 +107,7 @@ impl Summoner {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }

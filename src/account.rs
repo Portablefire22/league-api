@@ -37,7 +37,7 @@ impl RiotAccount {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -62,7 +62,7 @@ impl RiotAccount {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }

@@ -86,7 +86,7 @@ impl LeagueList {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -111,7 +111,7 @@ impl LeagueList {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -136,7 +136,7 @@ impl LeagueList {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -161,7 +161,7 @@ impl LeagueList {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -188,7 +188,7 @@ impl LeagueEntry {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
@@ -232,7 +232,7 @@ impl LeagueEntry {
                 Some(t)
             }
             Err(e) => {
-                error!("{e:?}");
+                error!("{e:?}, {}", resp);
                 None
             }
         }
