@@ -21,8 +21,8 @@ impl ToString for RoutingRegion {
 }
 
 impl RoutingRegion {
-    pub fn from_server(server: ServerRegion) -> Self {
-        match &server {
+    pub fn from_server(server: &ServerRegion) -> Self {
+        match server {
             ServerRegion::NA1 | ServerRegion::BR1 | ServerRegion::LA1 | ServerRegion::LA2 => {
                 Self::AMERICAS
             }
