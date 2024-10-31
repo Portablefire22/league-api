@@ -1,5 +1,4 @@
 use log::{debug, error};
-use reqwest::header::WARNING;
 use serde::{Deserialize, Serialize};
 
 use crate::region::routing::RoutingRegion;
