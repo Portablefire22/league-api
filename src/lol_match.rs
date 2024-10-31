@@ -171,6 +171,7 @@ pub struct Participant {
     team_early_surrendered: bool,
     team_id: u32,
     team_position: String,
+    #[serde(rename = "timeCCingOthers")]
     time_ccing_others: u32,
     time_played: u32,
     total_ally_jungle_minions_killed: u32,
@@ -184,6 +185,7 @@ pub struct Participant {
     total_heals_on_teammates: u32,
     /// Does not include jungle or pets
     total_minions_killed: u32,
+    #[serde(rename = "totalTimeCCDealt")]
     total_time_cc_dealt: u32,
     total_time_spent_dead: u32,
     total_units_healed: u32,
