@@ -114,29 +114,29 @@ pub struct Participant {
     on_my_way_pings: u32,
     participant_id: u32,
     #[serde(rename = "playerScore0")]
-    player_score0: u32,
+    player_score0: Option<u32>,
     #[serde(rename = "playerScore1")]
-    player_score1: u32,
+    player_score1: Option<u32>,
     #[serde(rename = "playerScore2")]
-    player_score2: u32,
+    player_score2: Option<u32>,
     #[serde(rename = "playerScore3")]
-    player_score3: u32,
+    player_score3: Option<u32>,
     #[serde(rename = "playerScore4")]
-    player_score4: u32,
+    player_score4: Option<u32>,
     #[serde(rename = "playerScore5")]
-    player_score5: u32,
+    player_score5: Option<u32>,
     #[serde(rename = "playerScore6")]
-    player_score6: u32,
+    player_score6: Option<u32>,
     #[serde(rename = "playerScore7")]
-    player_score7: u32,
+    player_score7: Option<u32>,
     #[serde(rename = "playerScore8")]
-    player_score8: u32,
+    player_score8: Option<u32>,
     #[serde(rename = "playerScore9")]
-    player_score9: u32,
+    player_score9: Option<u32>,
     #[serde(rename = "playerScore10")]
-    player_score10: u32,
+    player_score10: Option<u32>,
     #[serde(rename = "playerScore11")]
-    player_score11: u32,
+    player_score11: Option<u32>,
     penta_kills: u32,
     perks: Perks,
     physical_damage_dealt: u32,
