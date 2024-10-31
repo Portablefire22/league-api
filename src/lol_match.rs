@@ -372,18 +372,18 @@ pub struct Challenges {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Missions {
-    player_score_0: u32,
-    player_score_1: u32,
-    player_score_2: u32,
-    player_score_3: u32,
-    player_score_4: u32,
-    player_score_5: u32,
-    player_score_6: u32,
-    player_score_7: u32,
-    player_score_8: u32,
-    player_score_9: u32,
-    player_score_10: u32,
-    player_score_11: u32,
+    player_score0: u32,
+    player_score1: u32,
+    player_score2: u32,
+    player_score3: u32,
+    player_score4: u32,
+    player_score5: u32,
+    player_score6: u32,
+    player_score7: u32,
+    player_score8: u32,
+    player_score9: u32,
+    player_score10: u32,
+    player_score11: u32,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
