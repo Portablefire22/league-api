@@ -67,7 +67,7 @@ impl Summoner {
         }
     }
 
-    pub async fn by_puuid(region: ServerRegion, api_key: &String, puuid: &String) -> Option<Self> {
+    pub async fn by_puuid(region: &ServerRegion, api_key: &String, puuid: &String) -> Option<Self> {
         let request_url = format!(
             "https://{}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{}?api_key={}",
             region.to_string(),
