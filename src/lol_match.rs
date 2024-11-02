@@ -36,7 +36,7 @@ pub struct Info {
     #[serde(rename = "platformId")]
     platform_id: String,
     #[serde(rename = "queueId")]
-    queue_id: String,
+    queue_id: u32,
     teams: Vec<Team>,
     #[serde(rename = "tournamentCode")]
     tournament_code: Option<String>,
@@ -297,7 +297,7 @@ pub struct Challenges {
     pub legendary_count: Option<u32>,
     pub legendary_item_used: Vec<u32>,
     pub lost_an_inhibitor: Option<u32>,
-    pub max_cs_advantage_on_lane_opponent: f32,
+    pub max_cs_advantage_on_lane_opponent: Option<f32>,
     pub max_kill_deficit: Option<u32>,
     pub max_level_lead_lane_opponent: Option<u32>,
     pub mejais_full_stack_in_time: Option<u32>,
