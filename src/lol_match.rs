@@ -191,7 +191,7 @@ pub struct Participant {
     total_units_healed: u32,
     triple_kills: u32,
     true_damage_dealt: u32,
-    true_damage_dealt_to_champion: u32,
+    true_damage_dealt_to_champions: u32,
     true_damage_taken: u32,
     turret_kills: u32,
     turret_takedowns: u32,
