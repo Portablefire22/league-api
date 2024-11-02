@@ -241,7 +241,7 @@ pub struct Challenges {
     pub allied_jungle_monster_kills: Option<u32>,
     pub baron_takedowns: Option<u32>,
     pub blast_cone_opposite_opponent_count: Option<u32>,
-    pub bounty_gold: Option<u32>,
+    pub bounty_gold: Option<f32>,
     pub buffs_stolen: Option<u32>,
     pub complete_support_quest_in_time: Option<u32>,
     pub control_ward_time_coverage_in_river_or_enemy_half: Option<f32>,
