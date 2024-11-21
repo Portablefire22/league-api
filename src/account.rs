@@ -32,10 +32,7 @@ impl RiotAccount {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => {
-                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
-                Some(t)
-            }
+            Ok(t) => Some(t),
             Err(e) => {
                 error!("{e:?}, {}", resp);
                 None
@@ -57,10 +54,7 @@ impl RiotAccount {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => {
-                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
-                Some(t)
-            }
+            Ok(t) => Some(t),
             Err(e) => {
                 error!("{e:?}, {}", resp);
                 None

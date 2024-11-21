@@ -4,42 +4,42 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Match {
-    metadata: Metadata,
-    info: Info,
+    pub metadata: Metadata,
+    pub info: Info,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Metadata {
-    data_version: String,
-    match_id: String,
-    participants: Vec<String>,
+    pub data_version: String,
+    pub match_id: String,
+    pub participants: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Info {
     #[serde(rename = "endOfGameResult")]
-    end_of_game_result: String,
+    pub end_of_game_result: String,
     #[serde(rename = "gameCreation")]
-    game_creation: u64,
+    pub game_creation: u64,
     #[serde(rename = "gameDuration")]
-    game_duration: u64,
+    pub game_duration: u64,
     #[serde(rename = "gameEndTimestamp")]
-    game_end_timestamp: Option<u64>,
+    pub game_end_timestamp: Option<u64>,
     #[serde(rename = "gameId")]
-    game_id: u64,
+    pub game_id: u64,
     #[serde(rename = "gameMode")]
-    game_mode: String,
+    pub game_mode: String,
     #[serde(rename = "mapId")]
-    map_id: i64,
-    participants: Vec<Participant>,
+    pub map_id: i64,
+    pub participants: Vec<Participant>,
     #[serde(rename = "platformId")]
-    platform_id: String,
+    pub platform_id: String,
     #[serde(rename = "queueId")]
-    queue_id: i64,
-    teams: Vec<Team>,
+    pub queue_id: i64,
+    pub teams: Vec<Team>,
     #[serde(rename = "tournamentCode")]
-    tournament_code: Option<String>,
+    pub tournament_code: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -470,10 +470,7 @@ impl Match {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => {
-                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
-                Some(t)
-            }
+            Ok(t) => Some(t),
             Err(e) => {
                 error!("{e:?}, {:?}", resp);
                 None
@@ -497,6 +494,7 @@ impl Match {
             region.to_string(),
             puuid,
         );
+        // TODO, find a better looking way to do this?
         if start.is_some() {
             request_url = format!("{}?start={}", request_url, start.unwrap());
         } else {
@@ -521,10 +519,7 @@ impl Match {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => {
-                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
-                Some(t)
-            }
+            Ok(t) => Some(t),
             Err(e) => {
                 error!("{e:?}, {:?}", resp);
                 None
@@ -689,10 +684,7 @@ impl Timeline {
         let resp = reqwest::get(request_url).await.unwrap();
         let resp = resp.text().await.expect("Could not parse");
         match serde_json::from_str(&resp) {
-            Ok(t) => {
-                debug!("{}", serde_json::to_string_pretty(&resp).unwrap());
-                Some(t)
-            }
+            Ok(t) => Some(t),
             Err(e) => {
                 error!("{e:?}, {:?}", resp);
                 None
