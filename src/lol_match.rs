@@ -498,7 +498,7 @@ impl Match {
         if start.is_some() {
             request_url = format!("{}?start={}", request_url, start.unwrap());
         } else {
-            request_url = format!("{}?start=20", request_url);
+            request_url = format!("{}?start=0", request_url);
         }
         if start_time.is_some() {
             request_url = format!("{}startTime={}", request_url, start_time.unwrap());
